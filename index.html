@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Builder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Travel Itinerary </h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#weather">Weather</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Map Section -->
+        <section id="home" class="map-section">
+            <h2>Map</h2>
+            <label for="from">From:</label>
+            <input id="from" type="text" placeholder="Enter starting location">
+            <label for="to">To:</label>
+            <input id="to" type="text" placeholder="Enter destination">
+            <button id="get-directions">Get Directions</button>
+            <iframe id="map" src="https://maps.google.com/maps?q=New%20York%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            <p id="directions"></p>
+        </section>
+
+        <!-- Weather Section -->
+        <section id="weather" class="weather-section">
+            <h2>Weather in Your Destination</h2>
+            <label for="weather-city">Enter City:</label>
+            <input id="weather-city" type="text" placeholder="Enter destination city">
+            <button id="get-weather">Get Weather</button>
+            <div id="weather-details">
+                <p><strong>Temperature:</strong> <span id="temperature"></span></p>
+                <p><strong>Weather:</strong> <span id="weather-condition"></span></p>
+                <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+                <p><strong>Wind Speed:</strong> <span id="wind-speed"></span></p>
+            </div>
+        </section>
+
+        <!-- Available Hotels Section -->
+        <section id="hotels" class="hotel-section">
+            <h2>Available Hotels</h2>
+            <label for="hotel-city">Enter City Code (e.g., NYC, LON, DEL):</label>
+            <input id="hotel-city" type="text" placeholder="Enter city code">
+            <button id="get-hotels">Find Hotels</button>
+            <div id="hotel-list"></div>
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <p>© 2023 Travel Itinerary Builder. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
