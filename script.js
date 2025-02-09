@@ -1,4 +1,3 @@
-// ✅ Directions Feature
 document.getElementById("get-directions").addEventListener("click", () => {
     const from = document.getElementById('from').value;
     const to = document.getElementById('to').value;
@@ -13,7 +12,6 @@ document.getElementById("get-directions").addEventListener("click", () => {
     }
 });
 
-// ✅ Weather Feature
 document.getElementById("get-weather").addEventListener("click", function () {
     const city = document.getElementById("weather-city").value.trim();
     
@@ -56,13 +54,11 @@ document.getElementById("get-weather").addEventListener("click", function () {
             alert("An error occurred while fetching weather details.");
         });
 });
-// ✅ Amadeus API Credentials
 const amadeusAPI = {
     clientId: "NNAQn67exXyuUTmrsuf2hquqVJDVIX70",
     clientSecret: "Xln2Nr1UNHnA0QHA",
 };
 
-// ✅ Fetch Access Token
 async function getAccessToken() {
     const url = "https://test.api.amadeus.com/v1/security/oauth2/token";
 
@@ -80,7 +76,6 @@ async function getAccessToken() {
     return data.access_token;
 }
 
-// ✅ Fetch Hotels Based on City Code
 async function fetchHotels(cityCode) {
     const token = await getAccessToken();
 
@@ -95,10 +90,9 @@ async function fetchHotels(cityCode) {
     displayHotels(data);
 }
 
-// ✅ Display Hotels in the UI
 function displayHotels(data) {
     const hotelSection = document.getElementById("hotel-list");
-    hotelSection.innerHTML = ""; // ✅ Clear previous results
+    hotelSection.innerHTML = ""; 
 
     if (!data.data || data.data.length === 0) {
         hotelSection.innerHTML = "<p>No hotels found for this city.</p>";
@@ -117,7 +111,6 @@ function displayHotels(data) {
     });
 }
 
-// ✅ Search Hotels When User Clicks the Button
 document.getElementById("get-hotels").addEventListener("click", () => {
     const cityCode = document.getElementById("hotel-city").value.toUpperCase();
     if (cityCode) {
@@ -132,14 +125,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default anchor behavior
+            event.preventDefault();
             
-            const targetId = this.getAttribute("href").substring(1); // Get section ID
+            const targetId = this.getAttribute("href").substring(1);
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
                 window.scrollTo({
-                    top: targetSection.offsetTop - 60, // Adjust for header height
+                    top: targetSection.offsetTop - 60, 
                     behavior: "smooth"
                 });
             }
